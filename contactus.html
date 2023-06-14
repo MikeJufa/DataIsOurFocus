@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact us</title>
+  <link rel="stylesheet" href="./css/style2.css">
+</head>
+<body>
+  <div class="container">  
+    <form id="contact" action="https://formsubmit.co/7ba733157a0c0e2b1977ac6885fc6221" method="POST">
+      <!--Honeypot-->
+      <input type="text" name="_honey" style="display: none;">
+
+      <!--Disable Captha-->
+      <input type="hidden" name="_captcha" value="false">
+
+      <!--Success page-->
+      <input type="hidden" name="_next" value="https://mikejufa.github.io/Cobe_Spx_Daily_Rpt/success.html">
+
+      <h3>Contact Form</h3>
+      <h4>Contact us for detailed information</h4>
+      <fieldset>
+        <input placeholder="Your name" name="name" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Company Name (optional)" name="company" type="text" tabindex="1">
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Email Address" name="email" type="email" tabindex="2" required>
+      </fieldset>
+      <fieldset>
+        <input placeholder="Your Phone Number (optional)" name="phone" type="tel" tabindex="3">
+      </fieldset>
+      <fieldset>
+        <textarea placeholder="Please type your message ...." name="message" tabindex="5" required></textarea>
+      </fieldset>
+      <fieldset>
+        <button type="submit" id="contact-submit">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+</body>
+</html>
