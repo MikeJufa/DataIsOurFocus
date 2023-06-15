@@ -18,6 +18,57 @@ SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
 SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
 SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
 
+
+
+//Initial cboe all options daily data file.
+SET vEnv = 'Dev';
+
+FOR EACH vDataSource in 'bzx', 'c2', 'cboe', 'edgx'
+
+  LIB CONNECT TO 'Jufa_$(vEnv):$(vDataSource)_options';
+
+  RestConnectorMasterTable:
+  SQL SELECT 
+      "Symbol",
+      "Call/Put",
+      "Expiration",
+      "Strike Price",
+      "Volume",
+      "Matched",
+      "Routed",
+      "Bid Size",
+      "Bid Price",
+      "Ask Size",
+      "Ask Price",
+      "Last Price"
+  FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+
+  [CSV_source]:
+  LOAD	[Symbol],
+      [Call/Put],
+      [Expiration],
+      [Strike Price],
+      [Volume],
+      [Matched],
+      [Routed],
+      [Bid Size],
+      [Bid Price],
+      [Ask Size],
+      [Ask Price],
+      [Last Price],
+      '2023-06-15' as [Trade Date]
+  RESIDENT RestConnectorMasterTable;
+
+  DROP TABLE RestConnectorMasterTable;
+
+NEXT
+  
+STORE [CSV_source] into [lib://Jufa_$(vEnv):DataFiles/CBOE_all_options_data.qvd](qvd);
+
+
+
+
+/*
 LIB CONNECT TO 'REST_CBOE_SPX';
 
 RestConnectorMasterTable:
@@ -40,11 +91,11 @@ FROM CSV (header on, delimiter ",", quote """") "CSV_source";
 LOAD	
 	[Symbol]
 	, [Call/Put]
-	, [Expiration]
+	, 'E'&[Expiration] as [ExpDate]
 	, Num([Strike Price],'###0') as [Strike]
 	, Num([Volume],'#,##0') as Vol
 	, Money([Last Price]) as [LastPrice]
-    , '2023-05-12' as [Trade Date] //Start Date is Friday 2023-05-12, 6602 rows data.
+    , '2023-06-14' as [TradeDate] //Start Date is Friday 2023-05-12, 6877 rows data.
 RESIDENT RestConnectorMasterTable
 Where Match ([Symbol],'SPX')
 ;
