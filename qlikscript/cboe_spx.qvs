@@ -20,6 +20,7 @@ SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;
 
 
 
+/*
 //Initial cboe all options daily data file.
 SET vEnv = 'Dev';
 
@@ -56,7 +57,9 @@ FOR EACH vDataSource in 'bzx', 'c2', 'cboe', 'edgx'
       [Ask Size],
       [Ask Price],
       [Last Price],
-      '2023-06-15' as [Trade Date]
+      '2023-06-15' as [Trade Date],
+      '$(vDataSource)' as [Data Source],
+      1 as [Row Counter]
   RESIDENT RestConnectorMasterTable;
 
   DROP TABLE RestConnectorMasterTable;
@@ -65,45 +68,66 @@ NEXT
   
 STORE [CSV_source] into [lib://Jufa_$(vEnv):DataFiles/CBOE_all_options_data.qvd](qvd);
 
+SET vDataSource = '';
+*/
 
 
 
-/*
-LIB CONNECT TO 'REST_CBOE_SPX';
 
-RestConnectorMasterTable:
-SQL SELECT 
-	"Symbol",
-	"Call/Put",
-	"Expiration",
-	"Strike Price",
-	"Volume",
-	"Matched",
-	"Routed",
-	"Bid Size",
-	"Bid Price",
-	"Ask Size",
-	"Ask Price",
-	"Last Price"
-FROM CSV (header on, delimiter ",", quote """") "CSV_source";
+//Add cboe all options daily data file.
+LET vTodayDate = Today();
+SET vEnv = 'Dev';
 
-[CSV_source]:
-LOAD	
-	[Symbol]
-	, [Call/Put]
-	, 'E'&[Expiration] as [ExpDate]
-	, Num([Strike Price],'###0') as [Strike]
-	, Num([Volume],'#,##0') as Vol
-	, Money([Last Price]) as [LastPrice]
-    , '2023-06-14' as [TradeDate] //Start Date is Friday 2023-05-12, 6877 rows data.
-RESIDENT RestConnectorMasterTable
-Where Match ([Symbol],'SPX')
-;
+FOR EACH vDataSource in 'bzx', 'c2', 'cboe', 'edgx'
 
-Store RestConnectorMasterTable into [lib://DataFiles/Auto_COBE_SPX_Option_Data.qvd](qvd);
+  LIB CONNECT TO 'Jufa_$(vEnv):$(vDataSource)_options';
 
-DROP TABLE RestConnectorMasterTable;
+  RestConnectorMasterTable:
+  SQL SELECT 
+      "Symbol",
+      "Call/Put",
+      "Expiration",
+      "Strike Price",
+      "Volume",
+      "Matched",
+      "Routed",
+      "Bid Size",
+      "Bid Price",
+      "Ask Size",
+      "Ask Price",
+      "Last Price"
+  FROM CSV (header on, delimiter ",", quote """") "CSV_source";
 
+  [Incremental]:
+  LOAD	[Symbol],
+      [Call/Put],
+      [Expiration],
+      [Strike Price],
+      [Volume],
+      [Matched],
+      [Routed],
+      [Bid Size],
+      [Bid Price],
+      [Ask Size],
+      [Ask Price],
+      [Last Price],
+      '$(vTodayDate)' as [Trade Date],
+      '$(vDataSource)' as [Data Source],
+      1 as [Row Counter]
+  RESIDENT RestConnectorMasterTable;
+
+  DROP TABLE RestConnectorMasterTable;
+
+NEXT
+
+Concatenate
+
+//LOAD * FROM [lib://Jufa_$(vEnv):DataFiles/CBOE_all_options_data.qvd](qvd);
+LOAD * FROM [lib://Jufa_$(vEnv):DataFiles/CBOE_all_options_data_20230615.qvd](qvd);
+
+STORE [Incremental] into [lib://Jufa_$(vEnv):DataFiles/CBOE_all_options_data.qvd](qvd);
+
+SET vDataSource = '';
 
 
 
@@ -145,29 +169,33 @@ LET vTodayDate = Today();
 LET vSaturdayDate = Date(Num(Today())-1);
 LET vSundayDate = Date(Num(Today())-2);
 
+//2023-2025 holidays list
 Holidays:
 Mapping LOAD * Inline
 [
 Holiday, YN
-2022-01-17, 1
-2022-02-21, 1
-2022-04-15, 1
-2022-05-30, 1
-2022-06-20, 1
-2022-07-04, 1
-2022-09-05, 1
-2022-11-24, 1
-2022-12-26, 1
 2023-01-02, 1
 2023-01-16, 1
 2023-02-20, 1
 2023-04-07, 1
 2023-05-29, 1
 2023-06-19, 1
-2023-07-04, 1
 2023-09-04, 1
-2023-11-23, 1
 2023-12-25, 1
+2024-01-01, 1
+2024-01-15, 1
+2024-02-19, 1
+2024-03-29, 1
+2024-05-27, 1
+2024-06-19, 1
+2024-09-02, 1
+2025-01-01, 1
+2025-01-20, 1
+2025-02-17, 1
+2025-04-18, 1
+2025-05-26, 1
+2025-06-19, 1
+2025-09-01, 1
 ]
 ;
 
