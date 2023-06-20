@@ -1,0 +1,38 @@
+Here is an example email that you can use as a template to introduce your data analytic services business to your previous colleagues:
+
+Subject: Introduction of Data Analytic Services Business
+
+Dear [Colleague’s Name],
+
+I hope this email finds you well. I am writing to introduce you to my new business venture, [Business Name], which provides data analytic services for businesses like yours.
+
+As you know, I have always been passionate about data analytics and its potential to help businesses make better decisions. After years of working in the industry, I have decided to start my own business and offer my expertise to companies like yours.
+
+Our services include data analysis, data visualization, and predictive modeling. We use state-of-the-art Qlik Cloud tools and techniques to help businesses make sense of their data and gain valuable insights that can drive growth and profitability.
+
+I would love the opportunity to discuss how our services can benefit your business. Please let me know if you are interested in learning more about what we do.
+
+Thank you for your time and consideration.
+
+Best regards,
+
+[Your Name]
+
+You can customize this email by adding more details about your business and how it can help your colleagues. Remember to keep it concise, professional, and friendly.
+
+I hope this helps! Let me know if you have any other questions or if there is anything else I can assist you with.
+
+Source: Conversation with Bing, 2023-06-19(1) How To Write A Professional Email At Work (with Examples) | 2023 - HQ HIRE. https://hqhire.com/how-to-write-a-professional-email/ Accessed 2023-06-19.
+(2) How to Write an Effective Email Introduction | Indeed.com Canada. https://ca.indeed.com/career-advice/career-development/email-introduction-examples Accessed 2023-06-19.
+(3) 30 Best Business Introduction Sample Email Examples & Tips. https://rigorousthemes.com/blog/best-business-introduction-sample-email-examples-tips/ Accessed 2023-06-19.
+(4) The Introduction Email Template You Need in 2022 | The Muse. https://www.themuse.com/advice/making-a-professional-introduction-an-email-template Accessed 2023-06-19.
+(5) Intro to New Team Emails: 7 Templates for Success - BetterUp. https://www.betterup.com/blog/intro-to-new-team-email Accessed 2023-06-19.
+
+
+Qlik Cloud Platform is a cloud-based analytics and data integration platform that allows users to turn raw data into informed action 1. It provides a full range of services across the lifecycle from data integration to insight generation, including change data capture and data cataloging, application automation, self-service analytics and dashboards, conversational analytics, custom and embedded analytics 1.
+
+With Qlik Cloud Platform, you can shift to an active system built to deliver real-time information, provide auto-generated insights, and drive immediate actions 2. It is AI-powered and collaborative, making your data and analytics real-time, AI-driven, collaborative and actionable 2.
+
+Qlik Replicate is the foundation for modern, efficient data pipelines to the Google Cloud Platform. It moves data continuously at high speed from source(s) to target using Qlik’s change data capture (CDC) technology 3. Qlik offers solutions that help you accelerate data replication, ingestion, and streaming across all major database, data warehouse, data lake and legacy systems to the Google Cloud Platform 3.
+
+I hope this helps! Let me know if you have any other questions or if there is anything else I can assist you with.
