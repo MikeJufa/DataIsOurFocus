@@ -26,3 +26,7 @@
   height: 100px;
   border-radius: 50%;
 }
+
+.title-description {
+  list-style-type: none;
+}

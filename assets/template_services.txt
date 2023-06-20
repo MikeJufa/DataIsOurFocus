@@ -1,0 +1,57 @@
+Here is a template of an **Analytics Services Agreement** that you can use as a reference ¹:
+
+```
+ANALYTICS SERVICES AGREEMENT Standard Terms and Conditions
+
+Set forth below are the standard terms and conditions (“T&C’s”) which shall be integrated into and become part of each Analytics Services Agreement (“Agreement”) entered into between ADARA, Inc., a California corporation with its principal office located at 1070 E. Meadow Circle, Palo Alto, CA 94303 (“ADARA”), and a customer (“Customer”) purchasing the specific analytics services (“Services”) set forth in a Services Order (“SO”) executed by the ADARA and the Customer.
+
+1. Services. ADARA shall provide Customer with the Services described in the SO.
+
+2. Payment. Customer shall pay ADARA for the Services as set forth in the SO.
+
+3. Term. The term of this Agreement shall commence on the Effective Date and continue until terminated by either party.
+
+4. Confidentiality. Each party agrees to keep confidential all information received from the other party that is marked “confidential” or that should reasonably be understood to be confidential.
+
+5. Intellectual Property Rights. Each party retains all rights in its intellectual property.
+
+6. Limitation of Liability. Neither party shall be liable for any indirect, incidental, consequential, special or punitive damages.
+
+7. Governing Law. This Agreement shall be governed by California law.
+
+8. Entire Agreement. This Agreement constitutes the entire agreement between the parties and supersedes all prior agreements and understandings.
+
+9. Notices. All notices required under this Agreement shall be in writing and delivered to the addresses set forth below.
+
+ADARA, Inc.
+1070 E. Meadow Circle
+Palo Alto, CA 94303
+
+Customer:
+[Insert Customer Address]
+
+If you have any further questions or need more information, please let me know!
+
+¹: [Analytics Services Agreement Template](https://adara.com/wp-content/uploads/2017/09/ADARA_Analytics_Services_Agreement_TC_042017.pdf)
+
+Source: Conversation with Bing, 2023-06-20(1) ANALYTICS SERVICES AGREEMENT Standard Terms and Conditions. https://adara.com/wp-content/uploads/2017/09/ADARA_Analytics_Services_Agreement_TC_042017.pdf Accessed 2023-06-20.
+(2) Data Processing Agreement (Template) - GDPR.eu. https://gdpr.eu/data-processing-agreement/ Accessed 2023-06-20.
+(3) Sample Data Processing Agreement - Hubspot. https://iapp.org/resources/article/sample-data-processing-agreement-2/ Accessed 2023-06-20.
+(4) Service Level Agreement (SLA) Examples and Template. https://www.bmc.com/blogs/sla-template-examples/ Accessed 2023-06-20.
+
+
+Analytics Services Agreement:
+
+Scope of Services: This section should describe the specific services that you will provide to your client. It should be as detailed as possible and should include any limitations or exclusions.
+
+Data Collection and Use: This section should describe how you will collect and use data from your client. It should include details about what data you will collect, how you will collect it, and how you will use it.
+
+Data Security: This section should describe how you will protect your client’s data from unauthorized access or disclosure. It should include details about the security measures you will implement and how you will monitor for security breaches.
+
+Data Ownership: This section should describe who owns the data that is collected and used during the course of the agreement. It should also include details about how the data can be used by both parties.
+
+Termination: This section should describe the circumstances under which either party can terminate the agreement. It should also include details about what happens to the data that has been collected if the agreement is terminated.
+
+Indemnification: This section should describe how each party will indemnify the other in case of any legal action arising from the agreement.
+
+Limitation of Liability: This section should describe the limits of liability for each party in case of any damages arising from the agreement.
