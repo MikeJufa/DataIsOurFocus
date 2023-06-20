@@ -24,3 +24,11 @@ It is AI-powered and collaborative, making your data and analytics real-time, AI
 Qlik Replicate is the foundation for modern, efficient data pipelines to the Google Cloud Platform. 
 It moves data continuously at high speed from source(s) to target using Qlik’s change data capture (CDC) technology. 
 Qlik offers solutions that help you accelerate data replication, ingestion, and streaming across all major database, data warehouse, data lake and legacy systems to the Google Cloud Platform.
+
+
+
+We help you unlock the power of your data: Our data analytics solutions enable you to extract valuable insights from your data sources and make informed decisions that drive business growth.
+We turn data into stories: Our user-friendly technologies allow us to transform complex data sets into compelling stories that help you understand your business better.
+We help you see the big picture: Our data analytics solutions provide a holistic view of your business operations, enabling you to identify trends, patterns, and opportunities that might otherwise go unnoticed.
+We help you make data-driven decisions: Our data analytics solutions provide you with the insights you need to make informed decisions that drive business growth and improve customer satisfaction.
+We help you stay ahead of the competition: Our data analytics solutions enable you to stay ahead of the competition by providing you with the insights you need to make informed decisions and take proactive steps to improve your business.
